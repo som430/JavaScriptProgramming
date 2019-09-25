@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function fun1(){
+				var img1 = document.querySelector("#img1");
+				console.log(img1);
+				img1.src = "../common/image/Tulips.jpg"
+			}
+			function fun2(){
+				var imgList = document.querySelectorAll(".img2");
+				for(var i=0 ; i<imgList.length;i++){
+					imgList[i].src = "../common/image/Penguins.jpg"
+				}
+			}
+			function fun3(){
+				var imgList = document.querySelectorAll("img");
+				for(var i=0 ; i<imgList.length;i++){
+					imgList[i].src = "../common/image/Chrysanthemum.jpg"
+				}	
+			}
+			
+			function fun4(){
+				var imgList = document.querySelectorAll("#div1 img");
+				for(var i=0 ; i<imgList.length;i++){
+					imgList[i].src = "../common/image/Koala.jpg"
+				}
+			}
+			function fun5(){
+				var inputMid = document.querySelector("#joinForm input[name=mid]");
+				console.log(inputMid.value);
+				
+				var inputPass = document.querySelector("#joinForm input[name=mpassword]");
+				var password = inputPass.value;
+				if(password == ""){
+					window.alert("패스워드 안넣을래?");
+				}else{
+					if(password.length < 8){
+						window.alert("패스워드 똑바로 안넣을래?");	
+					}
+				}
+				
+				var inputHobby = document.querySelectorAll("#joinForm input[name=hobby]");
+				var inputHobbyChecked = document.querySelectorAll("#joinForm input[name=hobby]:checked");
+				for(var i=0; i<inputHobbyChecked.length;i++){
+					console.log(inputHobbyChecked[i].value);
+				}				
+			}
+			function fun6(){
+				var form = document.joinForm;
+				var mid = document.joinForm.mid.value;
+				
+				console.log("mid: " + mid);
+				
+				var mpassword = document.joinForm.mpassword.value;
+				console.log("mpassword: "+ mpassword);
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="fun1()">아이디로 찾기</button><br/>
+		<button onclick="fun2()">클래스로 찾기</button><br/>
+		<button onclick="fun3()">태그명으로 찾기</button><br/>
+		<button onclick="fun4()">내부 찾기</button><br/>
+		<button onclick="fun5()">form 양식 찾기</button><br/>
+		<button onclick="fun6()">form 양식 찾기</button><br/>
+		<hr/>
+		
+		<img id ="img1" src="../common/image/Hydrangeas.jpg" width = "200">
+		
+		<br/>
+		<img class ="img2" src="../common/image/Hydrangeas.jpg" width = "200">
+		<img class ="img2" src="../common/image/Hydrangeas.jpg" width = "200">
+		
+		<br/>
+		<div id ="div1">
+			<img src="../common/image/Hydrangeas.jpg" width = "200">
+			<img src="../common/image/Hydrangeas.jpg" width = "200">
+		</div>
+		<br/>
+		
+		<form id="joinForm" name="joinForm">
+			아이디:<input name="mid" type="text" value="fall"/><br/>
+			비번:<input name="mpassword" type="password"/><br/>
+			취미:
+				<input name="hobby" type="checkbox" value="movie"/>영화
+				<input name="hobby" type="checkbox" value="trip"/>여행
+				<input name="hobby" type="checkbox" value="coding"/>취미<br/>
+		</form>
+		
+	</body>
+</html>
