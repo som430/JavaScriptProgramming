@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src ="../common/js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			function fun1(){
+				var img1 = $("#img1");  
+				img1.attr("src", "../common/image/Lighthouse.jpg");
+			}
+			function fun2(){
+				var img2 = $(".img2");  
+				img2.attr("src", "../common/image/Penguins.jpg");
+			}
+			function fun3(){
+				var imgList3 = $("img");  
+				imgList3.attr("src", "../common/image/Tulips.jpg");
+			}
+			function fun4(){
+				$("#div1 img").attr("src", "../common/image/Koala.jpg");
+			}
+			function fun5(){
+				var inputMid = $("#joinForm input[name=mid]");
+				console.log(inputMid.val());
+
+				var inputPass = $("#joinForm input[name=mpassword]");
+				var password = inputPass.val();
+				if(password == ""){
+					window.alert("패스워드 안넣을래?");
+				}else{
+					if(password.length < 8){
+						window.alert("패스워드 똑바로 안넣을래?");	
+					}
+				}
+				
+				var inputHobby = $("#joinForm input[name=hobby]");
+				var inputHobbyChecked = $("#joinForm input[name=hobby]:checked");
+				for(var i=0; i<inputHobbyChecked.length;i++){
+					console.log(inputHobbyChecked[i].value);
+				}
+			}
+		</script>
+		
+		
+	</head>
+	<body>
+		<button onclick="fun1()">아이디로 찾기</button><br/>
+		<button onclick="fun2()">클래스로 찾기</button><br/>
+		<button onclick="fun3()">태그명으로 찾기</button><br/>
+		<button onclick="fun4()">내부 찾기</button><br/>
+		<button onclick="fun5()">form 양식 찾기</button><br/>
+		<hr/>
+		
+		<img id ="img1" src="../common/image/Hydrangeas.jpg" width = "200">
+		
+		<br/>
+		<img class ="img2" src="../common/image/Hydrangeas.jpg" width = "200">
+		<img class ="img2" src="../common/image/Hydrangeas.jpg" width = "200">
+		
+		<br/>
+		<div id ="div1">
+			<img src="../common/image/Hydrangeas.jpg" width = "200">
+			<img src="../common/image/Hydrangeas.jpg" width = "200">
+		</div>
+		<br/>
+		
+		<form id="joinForm" name="joinForm">
+			아이디:<input name="mid" type="text" value="fall"/><br/>
+			비번:<input name="mpassword" type="password"/><br/>
+			취미:
+				<input name="hobby" type="checkbox" value="movie"/>영화
+				<input name="hobby" type="checkbox" value="trip"/>여행
+				<input name="hobby" type="checkbox" value="coding"/>취미<br/>
+		</form>
+	</body>
+</html>
